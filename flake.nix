@@ -51,85 +51,81 @@
   };
 
   outputs = {
-    nixpkgs,
-    home-manager,
-    niri,
-    noctalia,
-    stylix,
-    ...
-  } @ inputs: let
-    # The platform the NNN machine runs on.
-    hostSystem = "x86_64-linux";
+      nixpkgs,
+      home-manager,
+      niri,
+      noctalia,
+      stylix,
+      ...
+    } @ inputs: let
+      hostSystem = "x86_64-linux";
 
-    # Personal, machine-local settings. Tracked with placeholder defaults but
-    # marked skip-worktree so your real values never get committed:
-    #   git update-index --skip-worktree local.nix
-    local = import ./local.nix;
-    inherit (local) username;
+      local = import ./local.nix;
+      inherit (local) username;
 
-    # Helper so `nix fmt` / `nix develop` work from macOS or Linux.
-    devSystems = [
-      "x86_64-linux"
-      "aarch64-linux"
-      "aarch64-darwin"
-      "x86_64-darwin"
-    ];
-    forAllSystems = nixpkgs.lib.genAttrs devSystems;
-    pkgsFor = system: nixpkgs.legacyPackages.${system};
-  in {
-    nixosConfigurations.nnn = nixpkgs.lib.nixosSystem {
-      system = hostSystem;
-      specialArgs = {inherit inputs username local;};
-      modules = [
-        niri.nixosModules.niri
-        noctalia.nixosModules.default
-        stylix.nixosModules.stylix
-        home-manager.nixosModules.home-manager
-
-        ./hosts/nnn
-        ./modules/nixos
-
-        {
-          nixpkgs.config.allowUnfree = true;
-          # Vesktop builds Vencord with pnpm, which nixpkgs currently marks
-          # insecure. It's a build-time tool only; allow it by name so the rule
-          # survives pnpm version bumps. (See modules/home/discord.nix.)
-          nixpkgs.config.allowInsecurePredicate = pkg: nixpkgs.lib.getName pkg == "pnpm";
-          nixpkgs.overlays = [
-            niri.overlays.niri
-            noctalia.overlays.default
-          ];
-
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.backupFileExtension = "hm-bak";
-          home-manager.extraSpecialArgs = {inherit inputs username local;};
-          # niri-flake auto-imports its home modules (config + stylix) into
-          # every user when home-manager runs as a NixOS module, so we only
-          # add noctalia's here. Importing the niri ones again double-declares
-          # `programs.niri.finalConfig`.
-          home-manager.sharedModules = [
-            noctalia.homeModules.default
-          ];
-          home-manager.users.${username} = import ./modules/home;
-        }
+      devSystems = [
+        "x86_64-linux"
+        "aarch64-linux"
+        "aarch64-darwin"
+        "x86_64-darwin"
       ];
+      forAllSystems = nixpkgs.lib.genAttrs devSystems;
+      pkgsFor = system: nixpkgs.legacyPackages.${system};
+
+      # Build a nixosConfiguration for one host, given its hostname.
+      # Assumes ./hosts/<hostname> exists with a default.nix (and usually
+      # a hardware-configuration.nix imported from there).
+      mkHost = hostname:
+        nixpkgs.lib.nixosSystem {
+          system = hostSystem;
+          specialArgs = {inherit inputs username local hostname;};
+          modules = [
+            niri.nixosModules.niri
+            noctalia.nixosModules.default
+            stylix.nixosModules.stylix
+            home-manager.nixosModules.home-manager
+
+            ./hosts/${hostname}
+            ./modules/nixos
+
+            {
+              nixpkgs.config.allowUnfree = true;
+              nixpkgs.config.allowInsecurePredicate = pkg: nixpkgs.lib.getName pkg == "pnpm";
+              nixpkgs.overlays = [
+                niri.overlays.niri
+                noctalia.overlays.default
+              ];
+
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = "hm-bak";
+              home-manager.extraSpecialArgs = {inherit inputs username local hostname;};
+              home-manager.sharedModules = [
+                noctalia.homeModules.default
+              ];
+              home-manager.users.${username} = import ./modules/home;
+            }
+          ];
+        };
+    in {
+      nixosConfigurations = {
+        shephard = mkHost "shephard";
+        blackstar = mkHost "blackstar";
+      };
+
+      formatter = forAllSystems (system: (pkgsFor system).alejandra);
+
+      devShells = forAllSystems (system: {
+        default = (pkgsFor system).mkShell {
+          packages = with pkgsFor system; [
+            alejandra
+            statix
+            deadnix
+            nh
+            nix-output-monitor
+          ];
+        };
+      });
     };
 
-    # `nix fmt`
-    formatter = forAllSystems (system: (pkgsFor system).alejandra);
-
-    # `nix develop` — tooling for hacking on this repo.
-    devShells = forAllSystems (system: {
-      default = (pkgsFor system).mkShell {
-        packages = with pkgsFor system; [
-          alejandra
-          statix
-          deadnix
-          nh
-          nix-output-monitor
-        ];
-      };
-    });
-  };
 }
