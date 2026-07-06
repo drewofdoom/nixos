@@ -1,6 +1,7 @@
 {local, ...}: {
   imports = [
     ./hardware-configuration.nix
+    ./niri-outputs.nix
   ];
 
   networking.hostName = local.hostName;
