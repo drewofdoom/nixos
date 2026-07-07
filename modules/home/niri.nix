@@ -9,8 +9,6 @@
 
     hotkey-overlay.skip-at-startup = true;
 
-    input.focus-follows-mouse.enable = true;
-
     layout = {
       focus-ring = {
         enable = false;
