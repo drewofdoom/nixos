@@ -9,6 +9,10 @@
 
     hotkey-overlay.skip-at-startup = true;
 
+    spawn-at-startup = [
+      { sh = "/run/current-system/sw/libexec/polkit-gnome-authentication-agent-1"; }
+    ];
+
     layout = {
       focus-ring = {
         enable = false;
