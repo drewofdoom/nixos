@@ -11,7 +11,6 @@
         { x = 0.0; }
         { y = 0.0; }
       ];
-      focus-at-startup = true;
     };
 
     outputs."HDMI-A-1" = {
