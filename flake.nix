@@ -33,6 +33,8 @@
     # rebuild it against a different nixpkgs and miss the cache.
     noctalia.url = "github:noctalia-dev/noctalia-shell/cachix";
 
+    noctalia-greeter.url = "github:noctalia-dev/noctalia-greeter";
+
     # System-wide base16 theming.
     stylix = {
       url = "github:nix-community/stylix";
