@@ -40,6 +40,7 @@
     xdg-utils
     xwayland-satellite
     wineWow64Packages.staging
+    wineasio
     yabridge
     yabridgectl
     winetricks
