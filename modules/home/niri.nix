@@ -66,6 +66,12 @@
         ];
         default-column-width = { fixed = 850; };
       }
+      {
+        matches = [
+          { app-id = "^steam_app_.*"; }
+        ];
+        open-fullscreen = true;
+      }
     ];
 
     layer-rules = [

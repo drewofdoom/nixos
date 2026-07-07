@@ -26,6 +26,8 @@
     enable = true;
   };
 
+  services.lact.enable = true;
+
   boot.kernelPackages = pkgs.linuxPackages_latest;
   networking.hostName = local.hostName;
 
