@@ -19,7 +19,4 @@
   # Git identity (modules/home/git.nix).
   gitUserName = "drewofdoom";
   gitUserEmail = "drew@devorcula.com";
-
-  # Primary display scale (modules/home/niri.nix, output eDP-1).
-  monitorScale = 1.0;
 }

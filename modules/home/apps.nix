@@ -13,6 +13,8 @@
     # backs the browser's "open/save" file picker via the gtk xdg portal.
     pkgs.nautilus
     pkgs.proton-pass
+    pkgs.proton-vpn
+
   ];
 
   # Zen browser — Firefox-based, from the community flake (beta channel).
