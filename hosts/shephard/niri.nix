@@ -13,5 +13,23 @@
       ];
       default-column-width.proportion = 2.0 / 2.0;
     };
+
+    input = {
+      keyboard.xkb = {
+        layout = "us,ru";
+        options = "grp:alt_shift_toggle"; # Alt+Shift switches US <-> Russian
+      };
+      keyboard.track-layout = "window";
+
+      touchpad = {
+        tap = true;
+        natural-scroll = true;
+        dwt = true; # disable-while-typing
+      };
+
+      mouse = {
+        accel-profile = "flat";
+      };
+    };
   };
 }

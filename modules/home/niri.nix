@@ -3,25 +3,6 @@
 
     prefer-no-csd = true;
 
-    input = {
-      keyboard.xkb = {
-        layout = "us,ru";
-        options = "grp:alt_shift_toggle"; # Alt+Shift switches US <-> Russian
-      };
-      # Each window remembers its own layout ("global" = one shared layout).
-      keyboard.track-layout = "window";
-      touchpad = {
-        tap = true;
-        natural-scroll = true;
-        dwt = true; # disable-while-typing
-      };
-      mouse = {
-        accel-profile = "flat";
-        natural-scroll = true; # match macOS-style scrolling (also set on touchpad)
-      };
-      focus-follows-mouse.enable = true;
-    };
-
     overview = {
       workspace-shadow.enable = false;
     };

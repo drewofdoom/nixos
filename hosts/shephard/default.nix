@@ -18,6 +18,14 @@
   };
   console.keyMap = "us";
 
+  environment.systemPackages = [pkgs.libva-utils];
+
+  services.hardware.bolt.enable = true;
+  services.thermald = {
+    enable = true;
+    ignoreCpuidCheck = true;
+  };
+
   # The release this config was written against. Do NOT bump casually after
   # first install — read the NixOS release notes first.
   system.stateVersion = "26.05";

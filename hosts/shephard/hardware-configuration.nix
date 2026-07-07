@@ -42,4 +42,10 @@
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware.graphics.extraPackages = with pkgs; [
+    intel-media-driver
+    vpl-gpu-rt
+  ];
+  # Pin the VA-API driver so libva doesn't probe/guess.
+  environment.sessionVariables.LIBVA_DRIVER_NAME = "iHD";
 }
