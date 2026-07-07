@@ -25,6 +25,9 @@
 
     # Plugins
     boops
+    chow-centaur
+    chow-kick
+    chow-phaser
     chow-tape-model
     distrho-ports
     drumgizmo
