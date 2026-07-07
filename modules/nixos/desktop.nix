@@ -36,6 +36,9 @@
     yabridgectl
     winetricks
     glib
+    wget
+    unzip
+    unar
   ];
 
   services.openssh = {
