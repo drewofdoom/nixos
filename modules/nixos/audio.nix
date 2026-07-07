@@ -16,4 +16,15 @@
     jack.enable = true;
     wireplumber.enable = true;
   };
+
+  environment.systemPackages = with pkgs; [
+    # DAWs
+    reaper
+
+    # Instruments
+    vital
+
+    # Plugins
+    lsp-plugins
+  ];
 }
