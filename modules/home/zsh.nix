@@ -5,7 +5,12 @@
 }: {
   # `nix-shell` / `nix-shell -p` hardcode bash. any-nix-shell re-execs zsh
   # inside the ad-hoc environment so we keep our shell, aliases, and prompt.
-  home.packages = [pkgs.any-nix-shell];
+  home = {
+    packages = [pkgs.any-nix-shell];
+    sessionPath = [
+      "$HOME/.local/bin"
+    ];
+  };
 
   programs.zsh = {
     enable = true;
