@@ -3,6 +3,7 @@
     ./hardware-configuration.nix
     ./niri.nix
     ./pipewire.nix
+    ./docker.nix
   ];
 
   # Enable OpenGL
@@ -57,6 +58,12 @@
     variant = "";
   };
   console.keyMap = "us";
+
+  users.users.${username} = {
+    extraGroups = [
+      "docker"
+    ];
+  };
 
   # The release this config was written against. Do NOT bump casually after
   # first install — read the NixOS release notes first.

@@ -5,7 +5,6 @@
     ./audio.nix
     ./flatpak.nix
     ./hardware.nix
-    ./docker.nix
     ./fonts.nix
     ./niri.nix
     ./noctalia.nix
