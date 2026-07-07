@@ -12,8 +12,8 @@
   gtk = {
     enable = true;
     iconTheme = {
-      name = "Papirus-Dark";
-      package = pkgs.papirus-icon-theme;
+      name = "Morewaita";
+      package = pkgs.morewaita-icon-theme;
     };
   };
 }
