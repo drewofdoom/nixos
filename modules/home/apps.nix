@@ -22,7 +22,7 @@
     pkgs.yabridgectl
 
     # DAWs
-    reaper
+    pkgs.reaper
     pkgs.reaper-sws-extension
     pkgs.reaper-reapack-extension
 

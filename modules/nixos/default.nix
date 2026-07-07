@@ -10,6 +10,7 @@
     ./noctalia.nix
     ./desktop.nix
     ./stylix.nix
+    ./steam.nix
     ./tailscale.nix
     ./users.nix
   ];
