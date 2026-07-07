@@ -3,7 +3,8 @@
   # ghostty, bat, btop, neovim, GTK/Qt and more from a single base16 scheme.
   stylix = {
     enable = true;
-    polarity = "dark";
+    autoEnable = true;
+    polarity = "dark";;
 
     # Kanagawa, vendored in-repo so the build never depends on whatever version
     # of `base16-schemes` happens to be pinned. To use an upstream scheme

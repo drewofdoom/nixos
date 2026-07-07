@@ -9,6 +9,7 @@
     ./noctalia.nix
     ./desktop.nix
     ./stylix.nix
+    ./steam.nix
     ./users.nix
   ];
 

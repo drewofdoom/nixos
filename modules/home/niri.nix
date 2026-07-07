@@ -40,12 +40,12 @@
       # nothing gets drawn. Thin, soft Kanagawa foreground on the focused
       # window; transparent on the rest so only the selected one is outlined.
       focus-ring = {
-        enable = true;
-        width = 1;
-        active.color = "#cba6f7";
-        inactive.color = "#00000000";
+        enable = false;
+        # width = 1;
+        # active.color = "#cba6f7";
+        # inactive.color = "#00000000";
       };
-      border.enable = false;
+      border.enable = true;
       background-color = "transparent";
     };
 

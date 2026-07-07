@@ -3,6 +3,10 @@
   pkgs,
   ...
 }: {
+  stylix.targets.zed.enable = true;
+  stylix.targets.zed.colors.enable = true; # theme colors
+  stylix.targets.zed.fonts.enable = true;  # optional, font sync too
+
   # Zed — the GUI code editor. Neovim stays the terminal `$EDITOR`
   # (see modules/home/neovim.nix); Zed is what opens when you double-click a
   # text file in Nautilus or pick "open with default" from anywhere else.
@@ -18,7 +22,6 @@
     # Auto-installed on startup. Names come from the Zed extension registry:
     # https://github.com/zed-industries/extensions
     extensions = [
-      "catppuccin" # color theme, selected below
       "catppuccin-icons" # file-type icon theme, selected below
       "nix" # Nix language support
       "html" # HTML language support
@@ -27,7 +30,7 @@
     userSettings = {
       # Hand-tuned Kanagawa from the extension above. mkForce because the Stylix
       # zed target also sets `theme` (to its harsh Base16 build).
-      theme = lib.mkForce "Catppuccin Mocha";
+      # theme = lib.mkForce "Catppuccin Mocha";
 
       # File-type icons from the catppuccin-icons extension above.
       icon_theme = "Catppuccin Mocha";
