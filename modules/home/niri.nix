@@ -14,7 +14,6 @@
         enable = false;
       };
       border.enable = true;
-      background-color = "transparent";
     };
 
     window-rules = [
@@ -30,6 +29,7 @@
           blur = true;
           xray = false;
         };
+        draw-border-with-background = false;
       }
       {
         matches = [

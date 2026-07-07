@@ -1,6 +1,4 @@
 {...}: {
-  stylix.targets.ghostty.enable = false;
-
   programs.ghostty = {
     enable = true;
     enableZshIntegration = true;
@@ -16,8 +14,6 @@
       copy-on-select = "clipboard";
       confirm-close-surface = false;
       window-inherit-working-directory = true;
-      theme = "Catppuccin Mocha";
-      background-opacity = "0.95";
     };
   };
 }
