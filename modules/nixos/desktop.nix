@@ -31,6 +31,7 @@
   # A handful of GUI essentials live at the system level so they're always
   # present regardless of which user logs in.
   environment.systemPackages = with pkgs; [
+    polkit_gnome
     brightnessctl
     playerctl
     wl-clipboard
