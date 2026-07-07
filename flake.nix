@@ -100,6 +100,7 @@
               nixpkgs.overlays = [
                 niri.overlays.niri
                 noctalia.overlays.default
+                (import ./overlays/yabridge-git.nix)
               ];
 
               home-manager.useGlobalPkgs = true;

@@ -1,5 +1,6 @@
 {pkgs, ...}: {
-  # PipeWire is the modern audio stack; disable PulseAudio in favour of it.
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   musnix = {

@@ -31,7 +31,7 @@
     libnotify
     xdg-utils
     xwayland-satellite
-    wineWow64Packages.yabridge
+    wine-staging
     yabridge
     yabridgectl
     winetricks

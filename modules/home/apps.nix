@@ -17,7 +17,7 @@
     sone
     sushi
     crosspipe
-    plex-desktop
+    pwvucontrol
 
     # DAWs
     reaper
