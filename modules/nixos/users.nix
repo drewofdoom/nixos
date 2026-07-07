@@ -14,6 +14,7 @@
       "video"
       "audio"
       "input"
+      "docker"
     ];
     shell = pkgs.fish;
   };
