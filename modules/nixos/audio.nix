@@ -1,7 +1,12 @@
-{...}: {
+{pkgs, ...}: {
   # PipeWire is the modern audio stack; disable PulseAudio in favour of it.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
+  musnix = {
+    enable = true;
+    das_watchdog.enable = true;
+    kernel.packages = pkgs.linuxPackages_latest;
+  };
 
   services.pipewire = {
     enable = true;

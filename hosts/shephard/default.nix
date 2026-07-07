@@ -1,8 +1,10 @@
-{local, ...}: {
+{local, pkgs, ...}: {
   imports = [
     ./hardware-configuration.nix
-    ./niri-outputs.nix
+    ./niri.nix
   ];
+
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = local.hostName;
 

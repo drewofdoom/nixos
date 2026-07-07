@@ -27,23 +27,8 @@
     };
 
     layout = {
-      gaps = 16;
-      center-focused-column = "always";
-      preset-column-widths = [
-        {proportion = 1.0 / 3.0;}
-        {proportion = 1.0 / 2.0;}
-        {proportion = 2.0 / 3.0;}
-      ];
-      default-column-width.proportion = 1.0 / 2.0;
-      # Stylix disables the focus-ring and themes the border instead, then we
-      # disable that border below — so re-enable the ring explicitly here or
-      # nothing gets drawn. Thin, soft Kanagawa foreground on the focused
-      # window; transparent on the rest so only the selected one is outlined.
       focus-ring = {
         enable = false;
-        # width = 1;
-        # active.color = "#cba6f7";
-        # inactive.color = "#00000000";
       };
       border.enable = true;
       background-color = "transparent";
