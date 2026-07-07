@@ -34,12 +34,6 @@
   programs.zellij.enable = true;
   programs.jq.enable = true;
 
-  programs.fzf = {
-    enable = true;
-    enableZshIntegration = true;
-    defaultCommand = "fd --type f --hidden --exclude .git";
-  };
-
   programs.zoxide = {
     enable = true;
     enableZshIntegration = true;
