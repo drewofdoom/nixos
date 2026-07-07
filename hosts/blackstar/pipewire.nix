@@ -81,4 +81,6 @@
       resample.quality = 4;
     };
   };
+
+  networking.firewall.allowedUDPPorts = [ 6980 ];
 }

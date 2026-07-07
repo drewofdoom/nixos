@@ -34,6 +34,7 @@
     yabridge
     yabridgectl
     winetricks
+    glib
   ];
 
   services.openssh = {
