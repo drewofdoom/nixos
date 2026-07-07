@@ -38,8 +38,6 @@
     options = "--delete-older-than 14d";
   };
 
-  # (allowUnfree + overlays are set in flake.nix where the inputs are in scope.)
-
   # A lean system-wide package set; everything user-facing lives in home-manager.
   environment.systemPackages = [];
 }

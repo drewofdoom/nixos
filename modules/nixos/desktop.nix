@@ -17,6 +17,9 @@
   programs.gnome-disks.enable = true;
   services.gvfs.enable = true; # trash + mounting for file managers.
 
+  # Enable xwayland
+  programs.xwayland.enable = true;
+
   # A handful of GUI essentials live at the system level so they're always
   # present regardless of which user logs in.
   environment.systemPackages = with pkgs; [
@@ -27,5 +30,6 @@
     slurp
     libnotify
     xdg-utils
+    xwayland-satellite
   ];
 }
