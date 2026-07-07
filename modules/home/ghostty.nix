@@ -1,12 +1,11 @@
 {...}: {
-  stylix.targets.ghostty.enable = true;
+  stylix.targets.ghostty.enable = false;
 
   programs.ghostty = {
     enable = true;
     enableZshIntegration = true;
     enableFishIntegration = true;
 
-    # Font + colors are supplied by Stylix; these are the ergonomic extras.
     settings = {
       window-padding-x = 12;
       window-padding-y = 12;
@@ -17,7 +16,8 @@
       copy-on-select = "clipboard";
       confirm-close-surface = false;
       window-inherit-working-directory = true;
-      # Background opacity is managed by Stylix (stylix.opacity.terminal).
+      theme = "Catppuccin Mocha";
+      background-opacity = "0.95";
     };
   };
 }

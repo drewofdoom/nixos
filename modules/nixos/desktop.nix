@@ -28,13 +28,6 @@
   programs.nix-ld.enable = false;
   programs.xwayland.enable = true;
 
-  # Appimage support
-  programs.appimage = {
-    enable = true;
-    binfmt = true;
-  };
-
-
   # A handful of GUI essentials live at the system level so they're always
   # present regardless of which user logs in.
   environment.systemPackages = with pkgs; [
@@ -56,7 +49,6 @@
     wget
     unzip
     unar
-    zstd
   ];
 
   systemd = {
