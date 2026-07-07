@@ -16,32 +16,4 @@
     jack.enable = true;
     wireplumber.enable = true;
   };
-
-  environment.systemPackages = with pkgs; [
-    # DAWs
-    reaper
-    reaper-sws-extension
-    reaper-reapack-extension
-
-    # Plugins
-    boops
-    chow-tape-model
-    distrho-ports
-    drumgizmo
-    infamousplugins
-    lsp-plugins
-    moospace
-    openav-artyfx
-    plujain-ramp
-    resonarium
-    surge-xt
-    tunefish
-    vital
-    x42-avldrums
-    x42-gmsynth
-    x42-plugins
-    zlcompressor
-    zlequalizer
-    zlsplitter
-  ];
 }

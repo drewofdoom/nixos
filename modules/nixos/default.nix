@@ -10,10 +10,8 @@
     ./noctalia.nix
     ./desktop.nix
     ./stylix.nix
-    ./steam.nix
-    ./users.nix
     ./tailscale.nix
-    ./wine.nix
+    ./users.nix
   ];
 
   # Flakes + the modern nix CLI.
