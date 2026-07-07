@@ -13,7 +13,7 @@
 
     # "Static mind, like the sea" (静心如海) — a meditating pepe before Hokusai's
     # Great Wave off Kanagawa, vendored in-repo (pngquant-optimized).
-    image = ../../themes/wallpaper.png;
+    # image = ../../themes/wallpaper.png;
 
     # A hint of terminal transparency for that layered desktop look.
     opacity.terminal = 0.95;
