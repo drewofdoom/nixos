@@ -13,13 +13,12 @@
     pkgs.proton-pass
     pkgs.proton-vpn
     pkgs.telegram-desktop
-    pkgs.fractal
     pkgs.slack
 
     # WINE
     pkgs.wineWow64Packages.staging
-    pkgs.yabridge
     pkgs.yabridgectl
+    pkgs.winetricks
 
     # DAWs
     pkgs.reaper
