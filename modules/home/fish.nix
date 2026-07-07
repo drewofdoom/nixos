@@ -22,7 +22,7 @@
         g = "git";
         lg = "lazygit";
         rebuild = "nh os switch" ;
-        update = "nh os switch --update";
+        update = "nh os boot --update";
       };
 
       interactiveShellInit = ''
