@@ -35,6 +35,30 @@
         default-column-width = { fixed = 1080; };
         default-window-height = { fixed = 920; };
       }
+      {
+        matches = [
+          { app-id="^com.mitchellh.ghostty$"; }
+        ];
+        default-column-width = { fixed = 1200; };
+      }
+      {
+        matches = [
+          { app-id = "^org.telegram.desktop$"; }
+        ];
+        default-column-width = { fixed = 600; };
+      }
+      {
+        matches = [
+          { app-id = "^org.gnome.Decibels$"; }
+        ];
+        open-floating = true;
+      }
+      {
+        matches = [
+          { app-id = "^org.gnome.DejaDup$"; }
+        ];
+        default-column-width = { fixed = 850; };
+      }
     ];
 
     layer-rules = [
@@ -44,16 +68,23 @@
         ];
         place-within-backdrop = true;
       }
+      {
+        matches = [
+          { namespace = "^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd)$"; }
+        ];
+        background-effect {
+          xray = false;
+      }
+      }
     ];
 
-    # Subtle, fast animations — omarchy-style polish without distraction.
-    # animations.slowdown = 0.7;
+    animations.slowdown = 0.7;
 
     # niri-flake's canonical attribute form: `action.<name> = <args>`. No-arg
     # actions take `{ }`; spawn takes a string or a list of argv strings.
     binds = {
       # Launchers
-      "Mod+Escape".action.toggle-overview = {};
+      "Mod+Escape".action.toggle-overview = { repeat=false };
       "Mod+T".action.spawn = "ghostty";
       # Noctalia v5 IPC: `noctalia msg <command>` (the old `ipc call` form and
       # the `noctalia-shell` binary are gone). The launcher is a named panel.
@@ -78,26 +109,49 @@
       "Mod+E".action.spawn = "nautilus"; # file manager
 
       # Window management
-      "Mod+Q".action.close-window = {};
+      "Mod+Q".action.close-window = { repeat=false };
       "Mod+F".action.maximize-column = {};
       "Mod+Shift+F".action.fullscreen-window = {};
       "Mod+W".action.toggle-column-tabbed-display = {};
       "Mod+V".action.toggle-window-floating = {};
+      "Mod+Shift+V".action.switch-focus-between-floating-and-tiling = {};
 
       # Focus
+      "Mod+C".action.center-column = {};
       "Mod+Left".action.focus-column-left = {};
       "Mod+Right".action.focus-column-right = {};
       "Mod+Up".action.focus-window-down = {};
       "Mod+Down".action.focus-window-up = {};
+      "Mod+Shift+Left".action.focus-monitor-left = {};
+      "Mod+Shift+Down".action.focus-monitor-down = {};
+      "Mod+Shift+Up".action.focus-monitor-up = {};
+      "Mod+Shift+Right".action.focus-monitor-right = {};
+      "Mod+Page_Down".action.focus-workspace-down = {};
+      "Mod+Page_Up".action.focus-workspace-up = {};
+      "Mod+WheelScrollDown".action.focus-workspace-down = { cooldown-ms = 150 };
+      "Mod+WheelScrollUp".action.focus-workspace-up = { cooldown-ms = 150 };
 
       # Move
-      "Mod+Shift+Left".action.move-column-left = {};
-      "Mod+Shift+Right".action.move-column-right = {};
-      "Mod+Shift+Down".action.move-window-down = {};
-      "Mod+Shift+Up".action.move-window-up = {};
+      "Mod+Ctrl+Left".action.move-column-left = {};
+      "Mod+Ctrl+Right".action.move-column-right = {};
+      "Mod+Ctrl+Down".action.move-window-down = {};
+      "Mod+Ctrl+Up".action.move-window-up = {};
+      "Mod+Shift+Ctrl+Left".action.move-column-to-monitor-left = {};
+      "Mod+Shift+Ctrl+Down".action.move-column-to-monitor-down = {};
+      "Mod+Shift+Ctrl+Up".action.move-column-to-monitor-up = {};
+      "Mod+Shift+Ctrl+Right".action.move-column-to-monitor-right = {};
+      "Mod+Shift+Page_Down".action.move-workspace-down = {};
+      "Mod+Shift+Page_Up".action.move-workspace-up = {};
+      "Mod+Ctrl+WheelScrollDown".action.move-column-to-workspace-down = { cooldown-ms = 150 };
+      "Mod+Ctrl+WheelScrollUp".action.move-column-to-workspace-up = { cooldown-ms = 150 };
+
+      # Consume
+      "Mod+BracketLeft".action.consume-or-expel-window-left = {};
+      "Mod+BracketRight".action.consume-or-expel-window-right = {};
 
       # Sizing
       "Mod+R".action.switch-preset-column-width = {};
+      "Mod+Shift+R".action.switch-preset-column-width-back = {};
       "Mod+Minus".action.set-column-width = "-10%";
       "Mod+Equal".action.set-column-width = "+10%";
 
@@ -115,8 +169,8 @@
 
       # Screenshots
       "Print".action.screenshot = {};
-      "Mod+Print".action.screenshot-window = {};
-      "Ctrl+Print".action.screenshot-screen = {};
+      "Ctrl+Print".action.screenshot-window = {};
+      "Alt+Print".action.screenshot-screen = {};
 
       # Help + session
       "Mod+Shift+Slash".action.show-hotkey-overlay = {};
@@ -131,6 +185,9 @@
       "XF86AudioPrev".action.spawn = ["noctalia" "msg" "media" "previous"];
       "XF86MonBrightnessUp".action.spawn = ["noctalia" "msg" "brightness-up"];
       "XF86MonBrightnessDown".action.spawn = ["noctalia" "msg" "brightness-down"];
+
+      # Power off monitors
+      "Mod+Shift+P".action.power-off-monitors = {};
     };
   };
 }

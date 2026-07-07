@@ -6,18 +6,15 @@
 
     layout = {
       gaps = 14;
-      center-focused-column = "always";
       preset-column-widths = [
         {proportion = 1.0 / 2.0;}
         {proportion = 2.0 / 3.0;}
       ];
-      default-column-width.proportion = 2.0 / 2.0;
     };
 
     input = {
       keyboard.xkb = {
-        layout = "us,ru";
-        options = "grp:alt_shift_toggle"; # Alt+Shift switches US <-> Russian
+        layout = "us";
       };
       keyboard.track-layout = "window";
 
@@ -25,10 +22,6 @@
         tap = true;
         natural-scroll = true;
         dwt = true; # disable-while-typing
-      };
-
-      mouse = {
-        accel-profile = "flat";
       };
     };
   };
