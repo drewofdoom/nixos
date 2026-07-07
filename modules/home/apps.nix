@@ -18,6 +18,7 @@
     sushi
     crosspipe
     pwvucontrol
+    file-roller
 
     # DAWs
     reaper

@@ -83,7 +83,8 @@ stdenv.mkDerivation (finalAttrs: {
     owner = "robbert-vdh";
     repo = "yabridge";
     rev = "ba7022df0aee1e91cde62d7f0e940d3bc43a82b0"; # new-wine10-embedding
-    hash = lib.fakeHash; # build once, paste the real hash nix reports
+    # !!! Paste the new hash here rebasing !!!
+    hash = "sha256-0ju/mfmhutuuPezq1GhiAEiQV/gnfEbrhjX4ydxLX+A=";
   };
 
   postUnpack = ''

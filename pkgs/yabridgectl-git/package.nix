@@ -13,8 +13,8 @@ rustPlatform.buildRustPackage {
   src = yabridge.src;
   sourceRoot = "${yabridge.src.name}/tools/yabridgectl";
 
-  # Build once with fakeHash, paste in the value nix reports
-  cargoHash = lib.fakeHash;
+  # !!! Paste the new hash here rebasing !!!
+  cargoHash = "sha256-VcBQxKjjs9ESJrE4F1kxEp4ah3j9jiNPq/Kdz/qPvro=";
 
   patches = [
     ./chainloader-from-nix-profiles.patch
