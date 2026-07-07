@@ -16,6 +16,7 @@
     ./apps.nix
     ./media.nix
     ./discord.nix
+    ./appimage.nix
   ];
 
   home.username = username;

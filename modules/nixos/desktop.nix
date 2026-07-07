@@ -25,7 +25,7 @@
   programs.gnome-disks.enable = true;
   services.gvfs.enable = true; # trash + mounting for file managers.
   services.envfs.enable = true;
-  programs.nix-ld.enable = true;
+  programs.nix-ld.enable = false;
   programs.xwayland.enable = true;
 
   # Appimage support
@@ -56,6 +56,7 @@
     wget
     unzip
     unar
+    zstd
   ];
 
   systemd = {
