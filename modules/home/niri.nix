@@ -72,9 +72,9 @@
         matches = [
           { namespace = "^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd)$"; }
         ];
-        background-effect {
+        background-effect = {
           xray = false;
-      }
+        };
       }
     ];
 
@@ -84,7 +84,10 @@
     # actions take `{ }`; spawn takes a string or a list of argv strings.
     binds = {
       # Launchers
-      "Mod+Escape".action.toggle-overview = { repeat=false };
+      "Mod+Escape" = {
+        action.toggle-overview = {};
+        repeat = false;
+      };
       "Mod+T".action.spawn = "ghostty";
       # Noctalia v5 IPC: `noctalia msg <command>` (the old `ipc call` form and
       # the `noctalia-shell` binary are gone). The launcher is a named panel.
@@ -109,7 +112,10 @@
       "Mod+E".action.spawn = "nautilus"; # file manager
 
       # Window management
-      "Mod+Q".action.close-window = { repeat=false };
+      "Mod+Q" = {
+        action.close-window = {};
+        repeat = false;
+      };
       "Mod+F".action.maximize-column = {};
       "Mod+Shift+F".action.fullscreen-window = {};
       "Mod+W".action.toggle-column-tabbed-display = {};
@@ -128,8 +134,14 @@
       "Mod+Shift+Right".action.focus-monitor-right = {};
       "Mod+Page_Down".action.focus-workspace-down = {};
       "Mod+Page_Up".action.focus-workspace-up = {};
-      "Mod+WheelScrollDown".action.focus-workspace-down = { cooldown-ms = 150 };
-      "Mod+WheelScrollUp".action.focus-workspace-up = { cooldown-ms = 150 };
+      "Mod+WheelScrollDown" = {
+        action.focus-workspace-down = {};
+        cooldown-ms = 150;
+      };
+      "Mod+WheelScrollUp" = {
+        action.focus-workspace-up = {};
+        cooldown-ms = 150;
+      };
 
       # Move
       "Mod+Ctrl+Left".action.move-column-left = {};
@@ -142,8 +154,14 @@
       "Mod+Shift+Ctrl+Right".action.move-column-to-monitor-right = {};
       "Mod+Shift+Page_Down".action.move-workspace-down = {};
       "Mod+Shift+Page_Up".action.move-workspace-up = {};
-      "Mod+Ctrl+WheelScrollDown".action.move-column-to-workspace-down = { cooldown-ms = 150 };
-      "Mod+Ctrl+WheelScrollUp".action.move-column-to-workspace-up = { cooldown-ms = 150 };
+      "Mod+Ctrl+WheelScrollDown" = {
+        action.move-column-to-workspace-down = {};
+        cooldown-ms = 150;
+      };
+      "Mod+Ctrl+WheelScrollUp" = {
+        action.move-column-to-workspace-up = {};
+        cooldown-ms = 150;
+      };
 
       # Consume
       "Mod+BracketLeft".action.consume-or-expel-window-left = {};
