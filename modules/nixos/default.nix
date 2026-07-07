@@ -11,6 +11,7 @@
     ./stylix.nix
     ./steam.nix
     ./users.nix
+    ./wine.nix
   ];
 
   # Flakes + the modern nix CLI.
