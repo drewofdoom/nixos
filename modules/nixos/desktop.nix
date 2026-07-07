@@ -31,5 +31,7 @@
     libnotify
     xdg-utils
     xwayland-satellite
+    wineWow64Packages.staging
+    winetricks
   ];
 }

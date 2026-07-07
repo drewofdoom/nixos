@@ -15,11 +15,6 @@
     pkgs.telegram-desktop
     pkgs.slack
 
-    # WINE
-    pkgs.wineWow64Packages.staging
-    pkgs.yabridgectl
-    pkgs.winetricks
-
     # DAWs
     pkgs.reaper
     pkgs.reaper-sws-extension
