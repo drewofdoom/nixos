@@ -23,7 +23,7 @@
 
   nix.settings.auto-optimise-store = true;
 
-  nix.settings.trusted-users = [ "root" "drew" "@wheel" ];
+  nix.settings.trusted-users = [ "drew" "@wheel" ];
 
   nix.gc = {
     automatic = true;
