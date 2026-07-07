@@ -14,6 +14,15 @@
     proton-vpn
     telegram-desktop
     slack
+    sone
+    decibels
+    showtime
+    gnome-calculator
+    sushi
+    papers
+    crosspipe
+    plex-desktop
+    lact
 
     # DAWs
     reaper
