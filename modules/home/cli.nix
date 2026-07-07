@@ -1,4 +1,5 @@
 {
+  lib,
   pkgs,
   username,
   ...
@@ -67,7 +68,16 @@
     nix-output-monitor # pretty build output (`nom`)
     alejandra # formatter
     devenv # per-project dev environments (`use devenv` in .envrc)
+
+    # any-nix-shell helper
+    any-nix-shell
   ];
+
+  home = {
+    sessionPath = [
+      "$HOME/.local/bin"
+    ];
+  };
 
   # nh is a nicer frontend for nixos-rebuild + garbage collection. Point it at
   # wherever you keep this flake checked out.
