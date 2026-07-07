@@ -1,29 +1,29 @@
 {local, username, ...}: {
   home-manager.users.${username}.programs.niri.settings = {
     outputs."DP-1" = {
-      mode = [
-        { width = 5120.0; }
-        { height = 1440.0; }
-        { refresh = 120.0; }
-      ];
+      mode = {
+        width = 5120;
+        height = 1440;
+        refresh = 120.0;
+      };
       scale = 1.0;
-      position = [
-        { x = 0.0; }
-        { y = 0.0; }
-      ];
+      position = {
+        x = 0;
+        y = 0;
+      };
     };
 
     outputs."HDMI-A-1" = {
-      mode = [
-        { width = 1920.0; }
-        { height = 1080.0; }
-        { refresh = 60.0; }
-      ];
+      mode = {
+        width = 1920;
+        height = 1080;
+        refresh = 60.0;
+      };
       scale = 1.0;
-      position = [
-        { x = 1600.0; }
-        { y = 1440.0; }
-      ];
+      position = {
+        x = 1600;
+        y = 1440;
+      };
     };
 
     layout = {
@@ -48,7 +48,7 @@
 
       touch = {
         map-to-output = "HDMI-A-1";
-      }
+      };
     };
   };
 }

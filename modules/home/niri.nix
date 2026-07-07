@@ -59,6 +59,13 @@
         ];
         default-column-width = { fixed = 850; };
       }
+      {
+        matches = [
+          { app-id = "^zen-beta$"; }
+          { title = "Pictune-in-Picture"; }
+        ];
+        default-column-width = { fixed = 850; };
+      }
     ];
 
     layer-rules = [
