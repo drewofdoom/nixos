@@ -12,7 +12,7 @@
   gtk = {
     enable = true;
     iconTheme = {
-      name = "Morewaita";
+      name = "MoreWaita";
       package = pkgs.morewaita-icon-theme;
     };
   };
