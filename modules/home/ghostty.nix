@@ -1,7 +1,10 @@
 {...}: {
+  stylix.targets.ghostty.enable = true;
+
   programs.ghostty = {
     enable = true;
     enableZshIntegration = true;
+    enableFishIntegration = true;
 
     # Font + colors are supplied by Stylix; these are the ergonomic extras.
     settings = {
