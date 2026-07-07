@@ -7,39 +7,37 @@
 
   # GUI desktop apps. Browsers and file managers live here rather than in the
   # CLI bundle.
-  home.packages = [
+  home.packages = with pkgs; [
     # Desktop
-    pkgs.nautilus
-    pkgs.proton-pass
-    pkgs.proton-vpn
-    pkgs.telegram-desktop
-    pkgs.slack
+    nautilus
+    proton-pass
+    proton-vpn
+    telegram-desktop
+    slack
 
     # DAWs
-    pkgs.reaper
-    pkgs.reaper-sws-extension
-    pkgs.reaper-reapack-extension
+    reaper
 
     # Plugins
-    pkgs.boops
-    pkgs.chow-tape-model
-    pkgs.distrho-ports
-    pkgs.drumgizmo
-    pkgs.infamousplugins
-    pkgs.lsp-plugins
-    pkgs.moospace
-    pkgs.openav-artyfx
-    pkgs.plujain-ramp
-    pkgs.resonarium
-    pkgs.surge-xt
-    pkgs.tunefish
-    pkgs.vital
-    pkgs.x42-avldrums
-    pkgs.x42-gmsynth
-    pkgs.x42-plugins
-    pkgs.zlcompressor
-    pkgs.zlequalizer
-    pkgs.zlsplitter
+    boops
+    chow-tape-model
+    distrho-ports
+    drumgizmo
+    infamousplugins
+    lsp-plugins
+    moospace
+    openav-artyfx
+    plujain-ramp
+    resonarium
+    surge-xt
+    tunefish
+    vital
+    x42-avldrums
+    x42-gmsynth
+    x42-plugins
+    zlcompressor
+    zlequalizer
+    zlsplitter
   ];
 
   # Zen browser — Firefox-based, from the community flake (beta channel).

@@ -16,8 +16,8 @@
   services.upower.enable = true;
   programs.gnome-disks.enable = true;
   services.gvfs.enable = true; # trash + mounting for file managers.
-
-  # Enable xwayland
+  services.envfs.enable = true;
+  programs.nix-ld.enable = true;
   programs.xwayland.enable = true;
 
   # A handful of GUI essentials live at the system level so they're always
@@ -31,7 +31,8 @@
     libnotify
     xdg-utils
     xwayland-satellite
-    wineWow64Packages.staging
+    yabridge
+    yabridgectl
     winetricks
   ];
 }
