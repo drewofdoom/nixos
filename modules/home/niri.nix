@@ -26,6 +26,10 @@
           top-left = 20.0;
           top-right = 20.0;
         };
+        background-effect = {
+          blur = true;
+          xray = false;
+        };
       }
       {
         matches = [
@@ -49,12 +53,6 @@
       }
       {
         matches = [
-          { app-id = "^org.gnome.Decibels$"; }
-        ];
-        open-floating = true;
-      }
-      {
-        matches = [
           { app-id = "^org.gnome.DejaDup$"; }
         ];
         default-column-width = { fixed = 850; };
@@ -71,7 +69,7 @@
     layer-rules = [
       {
         matches = [
-          { namespace = "^noctalia-wallpaper"; }
+          { namespace = "^noctalia-backdrop"; }
         ];
         place-within-backdrop = true;
       }
