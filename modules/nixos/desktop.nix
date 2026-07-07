@@ -13,6 +13,14 @@
   # Bluetooth + a few desktop conveniences.
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+  hardware.bluetooth.settings = {
+    General = {
+      Experimental = true;
+      Enable = "Source,Sink,Media,Socket";
+    };
+  };
+  services.dbus.enable = true;
   services.upower.enable = true;
   programs.gnome-disks.enable = true;
   services.gvfs.enable = true; # trash + mounting for file managers.

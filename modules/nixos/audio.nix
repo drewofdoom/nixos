@@ -1,7 +1,5 @@
 {pkgs, ...}: {
-  hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = true;
-  services.pulseaudio.enable = false;
+  # Musnix and latency
   security.rtkit.enable = true;
   musnix = {
     enable = true;
@@ -9,6 +7,8 @@
     kernel.packages = pkgs.linuxPackages_latest;
   };
 
+  # Pipewire
+  services.pulseaudio.enable = false;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -17,4 +17,6 @@
     jack.enable = true;
     wireplumber.enable = true;
   };
+
+  environment.pathsToLink = [ "/share/wireplumber" ];
 }
