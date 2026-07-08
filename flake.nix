@@ -1,5 +1,5 @@
 {
-  description = "drewofdoom's personal nix flake. modified from nnn-starter";
+  description = "drewofdoom's personal nix flake. modified from nnn-starter (https://github.com/floatdrop/nnn-starter/blob/main/README.md)";
 
   nixConfig = {
     extra-substituters = [
