@@ -21,7 +21,7 @@
     };
 
     # Declarative Flatpaks
-    nix-flatpak.url = "github:gvolpe/nix-flatpak";
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
 
     # Scrollable-tiling Wayland compositor + NixOS/home-manager modules.
     # Deliberately does NOT follow our nixpkgs, so niri-flake's prebuilt
