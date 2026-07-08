@@ -37,6 +37,7 @@
   programs.zoxide = {
     enable = true;
     enableZshIntegration = true;
+    enableFishIntegration = true;
     options = ["--cmd cd"]; # `cd` becomes smart, keeps muscle memory.
   };
   # home-manager loads `zoxide init` near the top of .zshrc, but direnv
