@@ -20,6 +20,7 @@
 
   home.username = username;
   home.homeDirectory = "/home/${username}";
+  home.pointerCursor.enable = true;
 
   # Match system.stateVersion in hosts/nnn/default.nix. Don't bump casually.
   home.stateVersion = "26.05";
