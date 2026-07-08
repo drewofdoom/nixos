@@ -12,7 +12,6 @@
     ./niri.nix
     ./noctalia.nix
     ./direnv.nix
-    ./claude-code.nix
     ./apps.nix
     ./media.nix
     ./discord.nix

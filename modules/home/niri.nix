@@ -10,10 +10,12 @@
     hotkey-overlay.skip-at-startup = true;
 
     layout = {
+      gaps = 14;
       focus-ring = {
         enable = false;
       };
       border.enable = true;
+      always-center-single-column = true;
     };
 
     window-rules = [
@@ -41,26 +43,14 @@
       }
       {
         matches = [
-          { app-id="^com.mitchellh.ghostty$"; }
-        ];
-        default-column-width = { fixed = 1200; };
-      }
-      {
-        matches = [
           { app-id = "^org.telegram.desktop$"; }
         ];
         default-column-width = { fixed = 600; };
       }
       {
         matches = [
+          { app-id="^com.mitchellh.ghostty$"; }
           { app-id = "^org.gnome.DejaDup$"; }
-        ];
-        default-column-width = { fixed = 850; };
-      }
-      {
-        matches = [
-          { app-id = "^zen-beta$"; }
-          { title = "Pictune-in-Picture"; }
         ];
         default-column-width = { fixed = 850; };
       }

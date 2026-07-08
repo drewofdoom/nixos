@@ -5,11 +5,11 @@
     };
 
     layout = {
-      gaps = 14;
       preset-column-widths = [
         {proportion = 1.0 / 2.0;}
         {proportion = 2.0 / 3.0;}
       ];
+      default-column-width = { proportion = 1.0 };
     };
 
     input = {
