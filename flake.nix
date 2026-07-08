@@ -32,8 +32,10 @@
     # behind. Crucially we do NOT make it follow our nixpkgs — that would
     # rebuild it against a different nixpkgs and miss the cache.
     noctalia.url = "github:noctalia-dev/noctalia-shell/cachix";
-
     noctalia-greeter.url = "github:noctalia-dev/noctalia-greeter";
+
+    # Flatpaks
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
 
     # System-wide base16 theming.
     stylix = {
@@ -57,6 +59,7 @@
 
   outputs = {
       nixpkgs,
+      nix-flatpak,
       home-manager,
       niri,
       noctalia,
@@ -90,6 +93,7 @@
             stylix.nixosModules.stylix
             inputs.musnix.nixosModules.musnix
             home-manager.nixosModules.home-manager
+            nix-flatpak.nixosModules.nix-flatpak
 
             ./hosts/${hostname}
             ./modules/nixos

@@ -50,7 +50,6 @@
       layout = {
         preset-column-widths = [
           { proportion = 1.0 / 2.0; }
-          { proportion = 1.0 / 3.0; }
           { proportion = 2.0 / 3.0; }
         ];
         default-column-width = { proportion = 1.0; };
@@ -65,11 +64,10 @@
         excludes = [
           { title = "Pictune-in-Picture"; }
         ];
-        default-column-width = { proportion = 2.0 / 3.0; };
+        default-column-width = { proportion = 1.0 / 3.0; };
       }
       {
         matches = [
-          { app-id = "^zen-beta$"; }
           { title = "Pictune-in-Picture"; }
         ];
         open-floating = true;

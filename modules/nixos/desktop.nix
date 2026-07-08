@@ -27,6 +27,7 @@
   services.envfs.enable = true;
   programs.nix-ld.enable = false;
   programs.xwayland.enable = true;
+  services.flatpak.enable = true;
 
   # A handful of GUI essentials live at the system level so they're always
   # present regardless of which user logs in.

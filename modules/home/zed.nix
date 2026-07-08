@@ -22,7 +22,7 @@
     # Auto-installed on startup. Names come from the Zed extension registry:
     # https://github.com/zed-industries/extensions
     extensions = [
-      "catppuccin"
+      "Rosé Pine"
       "catppuccin-icons" # file-type icon theme, selected below
       "nix" # Nix language support
       "html" # HTML language support
@@ -31,7 +31,7 @@
     userSettings = {
       # Hand-tuned Kanagawa from the extension above. mkForce because the Stylix
       # zed target also sets `theme` (to its harsh Base16 build).
-      theme = lib.mkForce "Catppuccin Mocha";
+      theme = lib.mkForce "Rosé Pine";
 
       # File-type icons from the catppuccin-icons extension above.
       icon_theme = "Catppuccin Mocha";

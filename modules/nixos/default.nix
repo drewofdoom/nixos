@@ -3,7 +3,6 @@
     ./boot.nix
     ./networking.nix
     ./audio.nix
-    ./flatpak.nix
     ./hardware.nix
     ./fonts.nix
     ./niri.nix

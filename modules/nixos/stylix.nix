@@ -5,14 +5,14 @@
     enable = true;
     autoEnable = true;
     polarity = "dark";
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
 
     # A hint of terminal transparency for that layered desktop look.
     opacity.terminal = 0.85;
 
     cursor = {
       package = pkgs.bibata-cursors;
-      name = "Bibata-Modern-Classic";
+      name = "Bibata-Classic-Cursor";
       size = 24;
     };
 
