@@ -1,5 +1,5 @@
 {
-  description = "nnn-starter — an opinionated NixOS starter for the NNN stack (NixOS + Niri + Noctalia)";
+  description = "drewofdoom's personal nix flake. modified from nnn-starter";
 
   nixConfig = {
     extra-substituters = [
@@ -20,6 +20,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Declarative Flatpaks
+    nix-flatpak.url = "github:gvolpe/nix-flatpak";
+
     # Scrollable-tiling Wayland compositor + NixOS/home-manager modules.
     # Deliberately does NOT follow our nixpkgs, so niri-flake's prebuilt
     # packages stay byte-identical to what niri.cachix.org has cached.
@@ -33,9 +36,6 @@
     # rebuild it against a different nixpkgs and miss the cache.
     noctalia.url = "github:noctalia-dev/noctalia-shell/cachix";
     noctalia-greeter.url = "github:noctalia-dev/noctalia-greeter";
-
-    # Flatpaks
-    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
 
     # System-wide base16 theming.
     stylix = {
@@ -59,11 +59,11 @@
 
   outputs = {
       nixpkgs,
-      nix-flatpak,
       home-manager,
       niri,
       noctalia,
       stylix,
+      nix-flatpak,
       ...
     } @ inputs: let
       hostSystem = "x86_64-linux";
@@ -73,9 +73,6 @@
 
       devSystems = [
         "x86_64-linux"
-        "aarch64-linux"
-        "aarch64-darwin"
-        "x86_64-darwin"
       ];
       forAllSystems = nixpkgs.lib.genAttrs devSystems;
       pkgsFor = system: nixpkgs.legacyPackages.${system};
@@ -88,12 +85,12 @@
           system = hostSystem;
           specialArgs = {inherit inputs username local hostname;};
           modules = [
+            nix-flatpak.nixosModules.nix-flatpak
             niri.nixosModules.niri
             noctalia.nixosModules.default
             stylix.nixosModules.stylix
             inputs.musnix.nixosModules.musnix
             home-manager.nixosModules.home-manager
-            nix-flatpak.nixosModules.nix-flatpak
 
             ./hosts/${hostname}
             ./modules/nixos

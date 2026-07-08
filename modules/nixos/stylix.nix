@@ -11,8 +11,8 @@
     opacity.terminal = 0.85;
 
     cursor = {
-      package = pkgs.bibata-cursors;
-      name = "Bibata-Classic-Cursor";
+      package = pkgs.rose-pine-cursor;
+      name = "BreezeX-RosePine-Linux";
       size = 24;
     };
 
