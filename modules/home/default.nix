@@ -13,7 +13,7 @@
     ./noctalia.nix
     ./direnv.nix
     ./apps.nix
-    # ./flatpak.nix
+    ./flatpak.nix
     ./media.nix
     ./discord.nix
   ];

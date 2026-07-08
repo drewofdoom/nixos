@@ -110,6 +110,7 @@
               home-manager.extraSpecialArgs = {inherit inputs username local hostname;};
               home-manager.sharedModules = [
                 noctalia.homeModules.default
+                inputs.nix-flatpak.homeManagerModules.nix-flatpak
               ];
               home-manager.users.${username} = import ./modules/home;
             }

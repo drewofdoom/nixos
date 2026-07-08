@@ -1,17 +1,15 @@
-# home.nix
-{ lib, ... }: {
+{ config, pkgs, ... }: {
 
-  # Add a new remote. Keep the default one (flathub)
-  services.flatpak.remotes = lib.mkOptionDefault [{
-    name = "flathub-beta";
-    location = "https://dl.flathub.org/repo/flathub.flatpakrepo";
-  }];
+    remotes = [{
+      name = "flathub";
+      location = "https://dl.flathub.org/repo/flathub.flatpakrepo";
+    }];
 
-  services.flatpak.update.auto.enable = true;
-  services.flatpak.uninstallUnmanaged = false;
+    packages = [
+      "de.haeckerfelix.Fragments"
+    ];
 
-  # Add here the flatpaks you want to install
-  services.flatpak.packages = [
-  ];
-
+    # Cleans up flatpaks not declared here
+    uninstallUnmanaged = true;
+  };
 }
