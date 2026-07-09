@@ -59,18 +59,17 @@
     window-rules = [
       {
         matches = [
-          { app-id = "^zen-beta$"; }
+          { title = "^Picture-in-Picture$"; }
+          { title = "^Picture in picture$"; }
         ];
-        excludes = [
-          { title = "Pictune-in-Picture"; }
-        ];
-        default-column-width = { proportion = 1.0 / 3.0; };
+        open-floating = true;
       }
       {
         matches = [
-          { title = "Pictune-in-Picture"; }
+          { app-id = "^zen-beta$"; }
+          { app-id = "^brave-browser$"; }
         ];
-        open-floating = true;
+        default-column-width = { proportion = 1.0 / 3.0; };
       }
     ];
   };
