@@ -11,11 +11,7 @@
   # (see modules/home/neovim.nix); Zed is what opens when you double-click a
   # text file in Nautilus or pick "open with default" from anywhere else.
   #
-  # Stylix's zed target syncs our Maple Mono / Noto fonts into Zed. For the
-  # colors we don't use Stylix's mechanically-generated "Base16 Kanagawa" — its
-  # base16 mapping makes keywords a harsh red and its template emits an
-  # appearance Zed rejects. Instead we use the hand-tuned "Kanagawa Wave" from
-  # the kanagawa-themes extension (declared below so it installs reproducibly).
+  # Stylix's zed target syncs our Maple Mono / Noto fonts into Zed.
   programs.zed-editor = {
     enable = true;
 
@@ -29,8 +25,6 @@
     ];
 
     userSettings = {
-      # Hand-tuned Kanagawa from the extension above. mkForce because the Stylix
-      # zed target also sets `theme` (to its harsh Base16 build).
       theme = lib.mkForce "Rosé Pine";
 
       # File-type icons from the catppuccin-icons extension above.
