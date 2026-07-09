@@ -12,9 +12,9 @@
     layout = {
       gaps = 14;
       focus-ring = {
-        enable = false;
+        enable = true;
       };
-      border.enable = true;
+      border.enable = false;
       always-center-single-column = true;
     };
 
