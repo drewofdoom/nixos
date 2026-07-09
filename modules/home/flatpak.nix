@@ -23,20 +23,6 @@
       "org.gtk.Gtk3theme.adw-gtk3-dark"
     ];
 
-    overrides.settings = {
-      global = {
-        Environment = {
-          "XCURSOR_PATH" = "/run/host/user-share/icons:/run/host/share/icons";
-        };
-        Context.filesystems = [
-          "/run/current-system/sw/share/fonts=ro"
-          "/run/current-system/sw/share/icons=ro"
-          "/run/current-system/sw/share/themes=ro"
-          "/etc/xdg=ro"
-        ];
-      };
-    };
-
-    uninstallUnmanaged = false;
+    uninstallUnmanaged = true;
   };
 }
