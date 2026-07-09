@@ -52,7 +52,7 @@
   };
   users.extraGroups.docker.members = [
     "@wheel"
-    ${username}
+    username
   ];
 
   # The release this config was written against. Do NOT bump casually after
