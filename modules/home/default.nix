@@ -9,7 +9,6 @@
     ./neovim.nix
     ./zed.nix
     ./gtk.nix
-    ./qt.nix
     ./niri.nix
     ./noctalia.nix
     ./direnv.nix

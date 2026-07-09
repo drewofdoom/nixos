@@ -37,6 +37,6 @@
       };
     };
 
-    uninstallUnmanaged = true;
+    uninstallUnmanaged = false;
   };
 }
