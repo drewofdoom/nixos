@@ -52,7 +52,7 @@
   # Zen browser — Firefox-based, from the community flake (beta channel).
   programs.zen-browser = {
     enable = true;
-    setAsDefaultBrowser = true;
+    # setAsDefaultBrowser = true;
   };
 
   stylix.targets.zen-browser.profileNames = ["default"];
