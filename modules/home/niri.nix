@@ -16,7 +16,7 @@
       };
       border = {
         enable = true;
-        width = 2;
+        width = 4;
       };
       always-center-single-column = true;
     };
