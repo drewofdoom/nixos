@@ -6,8 +6,8 @@
     ./hardware.nix
     ./fonts.nix
     ./dms.nix
-    # ./niri.nix
-    ./noctalia.nix
+    ./niri.nix
+    # ./noctalia.nix
     ./desktop.nix
     ./stylix.nix
     ./flatpak.nix
