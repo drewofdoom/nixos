@@ -3,6 +3,7 @@
     ./hardware-configuration.nix
     ./niri.nix
     ./pipewire.nix
+    ./cava.nix
   ];
 
   # Enable OpenGL
