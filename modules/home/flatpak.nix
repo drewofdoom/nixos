@@ -8,7 +8,7 @@
 
     packages = [
       "de.haeckerfelix.Fragments"
-      "io.github.flattool.Warehouse"
+      "com.brave.Browser"
 
       rec {
         appId = "com.github.magillos.cable";
