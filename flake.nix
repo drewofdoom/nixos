@@ -37,6 +37,11 @@
     noctalia.url = "github:noctalia-dev/noctalia-shell/cachix";
     noctalia-greeter.url = "github:noctalia-dev/noctalia-greeter";
 
+    dms = {
+      url = "github:AvengeMedia/DankMaterialShell/stable";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # System-wide base16 theming.
     stylix = {
       url = "github:nix-community/stylix";
