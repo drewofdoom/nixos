@@ -8,7 +8,7 @@
     base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
 
     # A hint of terminal transparency for that layered desktop look.
-    opacity.terminal = 0.85;
+    opacity.terminal = 0.95;
 
     cursor = {
       package = pkgs.rose-pine-cursor;
