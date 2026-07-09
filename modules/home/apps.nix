@@ -10,6 +10,7 @@
   home.packages = with pkgs; [
     # Desktop
     nautilus
+    brave
     proton-pass
     proton-vpn
     telegram-desktop
