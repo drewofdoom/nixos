@@ -8,6 +8,7 @@
 
     packages = [
       "de.haeckerfelix.Fragments"
+      "io.github.maniacx.BudsLink"
 
       rec {
         appId = "com.github.magillos.cable";

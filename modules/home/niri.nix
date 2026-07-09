@@ -59,6 +59,13 @@
       }
       {
         matches = [
+          { app-id = "io.github.maniacx.BudsLink"; }
+          { app-id = "^budslink"; }
+        ];
+        open-floating = true;
+      }
+      {
+        matches = [
           { app-id = "^steam_app_.*"; }
         ];
         open-fullscreen = true;
