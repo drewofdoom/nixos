@@ -10,7 +10,6 @@
     ./zed.nix
     ./gtk.nix
     ./niri.nix
-    # ./noctalia.nix
     ./direnv.nix
     ./apps.nix
     ./flatpak.nix

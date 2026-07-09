@@ -3,11 +3,9 @@
 
   nixConfig = {
     extra-substituters = [
-      "https://noctalia.cachix.org"
       "https://niri-epireyn.cachix.org"
     ];
     extra-trusted-public-keys = [
-      "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
       "niri-epireyn.cachix.org-1:tlVyFN7CtsDT+ZcLPS+ekFWeT1X6X4OqvWqbBMyIzFA="
       ];
   };
@@ -28,19 +26,9 @@
     # packages stay byte-identical to what niri.cachix.org has cached.
     niri.url = "github:epireyn/niri-flake";
 
-    # Noctalia desktop shell (v5 line). Pinned to the `cachix` branch: upstream
-    # force-pushes there only after a commit's package is built and pushed to
-    # noctalia.cachix.org, so `packages.default` is guaranteed to be a cache hit
-    # (no ~hour-long C++ source build). It tracks `main` (v5), just slightly
-    # behind. Crucially we do NOT make it follow our nixpkgs — that would
-    # rebuild it against a different nixpkgs and miss the cache.
-    noctalia.url = "github:noctalia-dev/noctalia-shell/cachix";
-    noctalia-greeter.url = "github:noctalia-dev/noctalia-greeter";
-
-    dms = {
-      url = "github:AvengeMedia/DankMaterialShell/stable";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # Dank DankMaterialShell
+    dms.url = "github:AvengeMedia/DankMaterialShell/stable";
+    dgop.url = "github:AvengeMedia/dgop";
 
     # System-wide base16 theming.
     stylix = {
@@ -66,7 +54,7 @@
       nixpkgs,
       home-manager,
       niri,
-      noctalia,
+      dms,
       stylix,
       nix-flatpak,
       ...
@@ -92,7 +80,6 @@
           modules = [
             nix-flatpak.nixosModules.nix-flatpak
             niri.nixosModules.niri
-            noctalia.nixosModules.default
             stylix.nixosModules.stylix
             inputs.musnix.nixosModules.musnix
             home-manager.nixosModules.home-manager
@@ -105,7 +92,6 @@
               nixpkgs.config.allowInsecurePredicate = pkg: nixpkgs.lib.getName pkg == "pnpm";
               nixpkgs.overlays = [
                 niri.overlays.niri
-                noctalia.overlays.default
                 (import ./overlays/yabridge-git.nix)
               ];
 
@@ -114,7 +100,6 @@
               home-manager.backupFileExtension = "hm-bak";
               home-manager.extraSpecialArgs = {inherit inputs username local hostname;};
               home-manager.sharedModules = [
-                noctalia.homeModules.default
                 inputs.nix-flatpak.homeManagerModules.nix-flatpak
               ];
               home-manager.users.${username} = import ./modules/home;

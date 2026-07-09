@@ -35,6 +35,8 @@
     polkit_gnome
     brightnessctl
     playerctl
+    cups-pk-helper
+    fprintd
     wl-clipboard
     grim
     slurp

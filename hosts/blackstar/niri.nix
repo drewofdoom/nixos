@@ -1,4 +1,4 @@
-{local, username, ...}: {
+{local, config, username, ...}: {
   home-manager.users.${username}.programs.niri.settings = {
     input = {
       keyboard.xkb = {
@@ -16,61 +16,15 @@
       };
     };
 
-    outputs."DP-1" = {
-      mode = {
-        width = 5120;
-        height = 1440;
-        refresh = 120.0;
-      };
-      scale = 1.0;
-      position = {
-        x = 0;
-        y = 0;
-      };
-      layout = {
-        preset-column-widths = [
-          { proportion = 1.0 / 4.0; }
-          { proportion = 1.0 / 2.0; }
-          { proportion = 2.0 / 3.0; }
-        ];
-      };
-    };
-
-    outputs."HDMI-A-1" = {
-      mode = {
-        width = 1920;
-        height = 1080;
-        refresh = 60.0;
-      };
-      scale = 1.0;
-      position = {
-        x = 1600;
-        y = 1440;
-      };
-      layout = {
-        preset-column-widths = [
-          { proportion = 1.0 / 2.0; }
-          { proportion = 2.0 / 3.0; }
-        ];
-        default-column-width = { proportion = 1.0; };
-      };
-    };
-
-    window-rules = [
-      {
-        matches = [
-          { title = "^Picture-in-Picture$"; }
-          { title = "^Picture in picture$"; }
-        ];
-        open-floating = true;
-      }
-      {
-        matches = [
-          { app-id = "^zen-beta$"; }
-          { app-id = "^brave-browser$"; }
-        ];
-        default-column-width = { proportion = 1.0 / 3.0; };
-      }
+    includes = with config.lib.niri.include; [
+      {path = "/home/${username}/.config/niri/dms/alttab.kdl"; optional = true;}
+      {path = "/home/${username}/.config/niri/dms/binds.kdl"; optional = true;}
+      {path = "/home/${username}/.config/niri/dms/colors.kdl"; optional = true;}
+      {path = "/home/${username}/.config/niri/dms/cursor.kdl"; optional = true;}
+      {path = "/home/${username}/.config/niri/dms/layout.kdl"; optional = true;}
+      {path = "/home/${username}/.config/niri/dms/outputs.kdl"; optional = true;}
+      {path = "/home/${username}/.config/niri/dms/windowrules.kdl"; optional = true;}
+      {path = "/home/${username}/.config/niri/dms/wpblur.kdl"; optional = true;}
     ];
   };
 }
