@@ -16,6 +16,7 @@
     ./flatpak.nix
     ./media.nix
     ./discord.nix
+    ./browser.nix
   ];
 
   home.username = username;

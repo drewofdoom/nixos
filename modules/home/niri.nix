@@ -109,7 +109,7 @@
         "msg"
         "settings-toggle"
       ];
-      "Mod+B".action.spawn = "zen-beta"; # browser
+      "Mod+B".action.spawn = "brave"; # browser
       "Mod+E".action.spawn = "nautilus"; # file manager
 
       # Window management
