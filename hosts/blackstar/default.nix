@@ -1,8 +1,9 @@
-{config, local, pkgs, ...}: {
+{config, local, pkgs, username,...}: {
   imports = [
     ./hardware-configuration.nix
     ./niri.nix
     ./pipewire.nix
+    ./cava.nix
   ];
 
   # Enable OpenGL
@@ -51,7 +52,7 @@
   };
   users.extraGroups.docker.members = [
     "@wheel"
-    "drew"
+    ${username}
   ];
 
   # The release this config was written against. Do NOT bump casually after
