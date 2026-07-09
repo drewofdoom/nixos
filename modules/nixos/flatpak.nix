@@ -1,11 +1,10 @@
 # Save this or include it in your ./modules/nixos/ block
 { config, pkgs, ... }: {
 
-  # Ensure the flatpak service is enabled globally
-  services.flatpak.enable = true;
-
   # Declarative configuration via nix-flatpak
   services.flatpak = {
+    enable = true;
+
     # Automatically add the Flathub remote if missing
     remotes = [
       {
@@ -16,10 +15,6 @@
 
     # Declare what flatpaks you actually want installed system-wide
     packages = [
-      # "org.signal.Signal"
-      # "com.valvesoftware.Steam"
-      # You can specify exact remotes if you use multiples
-      # { appId = "org.gimp.GIMP"; origin = "flathub"; }
     ];
 
     # Optional but highly recommended cleanup configurations
