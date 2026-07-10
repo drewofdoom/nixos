@@ -9,17 +9,20 @@
   # CLI bundle.
   home.packages = with pkgs; [
     # Desktop
-    nautilus
     brave
+    crosspipe
+    file-roller
+    mediawriter
+    nautilus
+    proton-authenticator
     proton-pass
     proton-vpn
-    telegram-desktop
+    protonmail-desktop
+    pwvucontrol
     slack
     sone
     sushi
-    crosspipe
-    pwvucontrol
-    file-roller
+    telegram-desktop
 
     # DAWs
     reaper
