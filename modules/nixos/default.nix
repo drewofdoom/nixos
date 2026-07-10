@@ -1,4 +1,4 @@
-{...}: {
+{ username, ... }: {
   imports = [
     ./boot.nix
     ./networking.nix
@@ -23,7 +23,7 @@
 
   nix.settings.auto-optimise-store = true;
 
-  nix.settings.trusted-users = [ "drew" "@wheel" ];
+  nix.settings.trusted-users = [ username "@wheel" ];
 
   nix.gc = {
     automatic = true;
