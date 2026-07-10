@@ -25,7 +25,7 @@
   programs.gnome-disks.enable = true;
   services.gvfs.enable = true; # trash + mounting for file managers.
   services.envfs.enable = true;
-  programs.nix-ld.enable = false;
+  programs.nix-ld.enable = true;
   programs.xwayland.enable = true;
   services.flatpak.enable = true;
 
